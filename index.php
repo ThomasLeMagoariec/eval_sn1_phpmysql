@@ -12,12 +12,6 @@
 </head>
 <body>
 	<?php include "header.php" ?>
-    <main class="container">
-        <!-- Exemples de messages :
-        <div class="flash flash-success">Votre événement a bien été ajouté.</div>
-        <div class="flash flash-error">Une erreur est survenue.</div>
-        -->
-        <!-- ===== Fin de l'en-tête ===== -->
 
     <section class="hero" style="background-image: url('images/rock.jpg')">
         <div class="hero-content">

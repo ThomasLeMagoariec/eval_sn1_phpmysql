@@ -27,5 +27,12 @@ echo "<header class='site-header'>
                 -->
             </nav>
         </div>
-    </header>";
+    </header>
+	<main class='container'>
+        <!-- Exemples de messages :
+        <div class='flash flash-success'>Votre événement a bien été ajouté.</div>
+        <div class='flash flash-error'>Une erreur est survenue.</div>
+        -->
+		<!-- ===== Fin de l'en-tête ===== -->
+";
 ?>
