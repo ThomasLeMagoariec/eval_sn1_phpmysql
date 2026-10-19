@@ -9,4 +9,6 @@ try {
 } catch (PDOException $e) {
 	die($e->getMessage());
 }
+
+session_start();
 ?>

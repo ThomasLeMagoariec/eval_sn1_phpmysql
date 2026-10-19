@@ -1,3 +1,7 @@
+<?php 
+require_once 'config.php';
+include 'connect.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,10 +35,10 @@
                     <input type="password" id="password" name="password" autocomplete="current-password" required>
                 </div>
 
-                <button type="submit">Se connecter</button>
+                <button type="submit" name="login">Se connecter</button>
             </form>
 
-            <p class="form-footer">Pas encore de compte ? <a href="inscription.html">Créer un compte</a></p>
+            <p class="form-footer">Pas encore de compte ? <a href="inscription.php">Créer un compte</a></p>
         </div>
     </div>
 	<?php include 'footer.php' ?>

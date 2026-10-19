@@ -60,7 +60,7 @@
                     <div class="help-text">JPG, PNG ou WebP.</div>
                 </div>
 
-                <button type="submit">Enregistrer l'événement</button>
+                <button type="submit" name="create-event">Enregistrer l'événement</button>
             </form>
         </div>
     </div>

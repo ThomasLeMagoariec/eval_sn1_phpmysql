@@ -29,7 +29,6 @@ include 'event.php';
 
     <div class="section-head">
         <h2>À venir</h2>
-        <!-- La catégorie sélectionnée porte la classe « active » -->
         <ul class="legend">
 			<?php build_filter() ?>
         </ul>
