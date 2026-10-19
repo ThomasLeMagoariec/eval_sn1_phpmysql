@@ -1,3 +1,7 @@
+<?php
+require_once 'config.php';
+include 'register.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -39,7 +43,7 @@
                     <div class="help-text">6 caractères minimum.</div>
                 </div>
 
-                <button type="submit">Créer mon compte</button>
+                <button type="submit" name="register">Créer mon compte</button>
             </form>
 
             <p class="form-footer">Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>

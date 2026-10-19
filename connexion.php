@@ -1,6 +1,8 @@
 <?php 
 require_once 'config.php';
 include 'connect.php';
+
+$alreadyLoggedIn = isset($_SESSION["email"]);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,22 +22,26 @@ include 'connect.php';
         <div class="card">
             <h1>Connexion</h1>
 
-            <!-- Exemple de message d'erreur :
-            <div class="flash flash-error">Identifiants invalides.</div>
-            -->
+            <?php if ($alreadyLoggedIn): ?>
+                <div class="flash flash-success">Vous êtes déjà connecté en tant que <strong><?= htmlspecialchars($_SESSION["email"]) ?></strong>.</div>
+            <?php else: ?>
+                <!-- Exemple de message d'erreur :
+                <div class="flash flash-error">Identifiants invalides.</div>
+                -->
+            <?php endif; ?>
 
-            <form class="form" method="post">
+            <form class="form<?= $alreadyLoggedIn ? ' form-disabled' : '' ?>" method="post" <?= $alreadyLoggedIn ? 'aria-disabled="true"' : '' ?>>
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" autocomplete="email" required autofocus>
+                    <input type="email" id="email" name="email" autocomplete="email" required autofocus value="<?= $alreadyLoggedIn ? htmlspecialchars($_SESSION["email"]) : '' ?>" <?= $alreadyLoggedIn ? 'disabled' : '' ?>>
                 </div>
 
                 <div>
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" autocomplete="current-password" required>
+                    <input type="password" id="password" name="password" autocomplete="current-password" required <?= $alreadyLoggedIn ? 'disabled' : '' ?>>
                 </div>
 
-                <button type="submit" name="login">Se connecter</button>
+                <button type="submit" name="login" <?= $alreadyLoggedIn ? 'disabled' : '' ?>>Se connecter</button>
             </form>
 
             <p class="form-footer">Pas encore de compte ? <a href="inscription.php">Créer un compte</a></p>

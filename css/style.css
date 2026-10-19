@@ -199,6 +199,14 @@ main.container { padding-top: 32px; padding-bottom: 64px; }
 .form button { width: 100%; padding: 14px; margin-top: 8px; }
 .form-footer { text-align: center; margin: 20px 0 0; color: var(--muted); }
 
+/* Formulaire désactivé (déjà connecté) */
+.form-disabled { opacity: 0.6; pointer-events: none; }
+.form-disabled input,
+.form-disabled select,
+.form-disabled textarea,
+.form-disabled button { background: var(--field); color: var(--muted); cursor: not-allowed; }
+.form-disabled button { background: #d4d4d8; box-shadow: none; transform: none; }
+
 /* ===== Détail d'un événement ===== */
 .detail-hero {
     border-radius: 28px;

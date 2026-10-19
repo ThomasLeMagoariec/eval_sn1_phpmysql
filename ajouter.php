@@ -1,3 +1,7 @@
+<?php
+require_once 'config.php';
+include 'event.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +17,7 @@
 <body>
 	<?php include 'header.php' ?>
     <div class="narrow">
-        <a class="back-link" href="index.html">← Retour aux événements</a>
+        <a class="back-link" href="index.php">← Retour aux événements</a>
 
         <div class="card">
             <h1>Ajouter un événement</h1>
