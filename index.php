@@ -1,8 +1,7 @@
 <?php
-include_once 'config.php';
-include 'event.php';
+require_once 'config.php';
+require_once 'event.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,26 +15,26 @@ include 'event.php';
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<?php include "header.php" ?>
+<?php include 'header.php' ?>
 
-    <section class="hero" style="background-image: url('images/rock.jpg')">
-        <div class="hero-content">
-            <span class="hero-kicker">Agenda local</span>
-            <h1>Les événements près de chez vous</h1>
-            <p>Concerts, conférences, ateliers et sport : trouvez votre prochaine sortie ou proposez la vôtre.</p>
-            <a class="btn" href="ajouter.php">+ Ajouter un événement</a>
-        </div>
-    </section>
-
-    <div class="section-head">
-        <h2>À venir</h2>
-        <ul class="legend">
-			<?php build_filter() ?>
-        </ul>
+<section class="hero" style="background-image: url('images/rock.jpg')">
+    <div class="hero-content">
+        <span class="hero-kicker">Agenda local</span>
+        <h1>Les événements près de chez vous</h1>
+        <p>Concerts, conférences, ateliers et sport : trouvez votre prochaine sortie ou proposez la vôtre.</p>
+        <a class="btn" href="ajouter.php">+ Ajouter un événement</a>
     </div>
+</section>
 
-	<?php build_events($dbh) ?>
+<div class="section-head">
+    <h2>À venir</h2>
+    <ul class="legend">
+        <?php build_filter() ?>
+    </ul>
+</div>
 
-	<?php include 'footer.php' ?>
+<?php build_events($dbh) ?>
+
+<?php include 'footer.php' ?>
 </body>
-<.php>
+</html>

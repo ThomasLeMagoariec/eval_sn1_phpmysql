@@ -24,10 +24,6 @@ $alreadyLoggedIn = isset($_SESSION["email"]);
 
             <?php if ($alreadyLoggedIn): ?>
                 <div class="flash flash-success">Vous êtes déjà connecté en tant que <strong><?= htmlspecialchars($_SESSION["email"]) ?></strong>.</div>
-            <?php else: ?>
-                <!-- Exemple de message d'erreur :
-                <div class="flash flash-error">Identifiants invalides.</div>
-                -->
             <?php endif; ?>
 
             <form class="form<?= $alreadyLoggedIn ? ' form-disabled' : '' ?>" method="post" <?= $alreadyLoggedIn ? 'aria-disabled="true"' : '' ?>>
