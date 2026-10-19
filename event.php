@@ -1,11 +1,5 @@
 <?php
 
-function get_events($dbh)  {
-	$query = $dbh->prepare("SELECT * FROM event");
-	$query->execute();
-	return $query->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function build_filter() {
 	$filters = ["toutes", "concert", "conference", "atelier", "sport"];
 
@@ -19,8 +13,24 @@ function build_filter() {
 
 }
 
+function get_events($dbh, $filter)  {
+	if ($filter == "toutes") {
+		$query = $dbh->prepare("SELECT * FROM event");
+		$query->execute();
+	} else {
+		$query = $dbh->prepare("SELECT * FROM event WHERE category = :filter");
+		$query->execute(array("filter" => $filter));
+	}
+	return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 function build_events($dbh) {
-	$events = get_events($dbh);
+	$filter = "toutes";
+	if (isset($_GET["categorie"]))
+		$filter = $_GET["categorie"];
+
+	$events = get_events($dbh, $filter);
 
 	if (count($events) == 0) {
 		echo "<p class='empty'>Aucun événement à venir pour le moment.</p>";
