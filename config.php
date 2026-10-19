@@ -2,8 +2,8 @@
 
 try {
 	$dbh = new PDO(
-    	'pgsql:host=10.0.0.4;port=5432;dbname=jo',
-    	'epsi',
+    	'mysql:host=localhost;dbname=agenda',
+    	'root',
     	'root'
 	);
 } catch (PDOException $e) {
